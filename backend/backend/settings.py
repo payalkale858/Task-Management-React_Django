@@ -25,7 +25,11 @@ SECRET_KEY = "django-insecure-ojufiv=o$#v42n$lzt4mpyk6zdg*eog!v+kp+)xzg#frccn-!r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "task-management-react-django-1.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
