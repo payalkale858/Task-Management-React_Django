@@ -1,0 +1,22 @@
+
+
+html,
+body,
+#root {
+  /* margin: 0;
+  padding: 0;
+  min-height: 100vh; */
+  background-color: #133457;
+  color:  #ffc107;
+}
+#navbar{
+  background-color: #092139;
+  
+}
+.text-beige {
+  color: #ffc107 !important;
+}
+#con{
+  margin-top: 50px;
+}
+
