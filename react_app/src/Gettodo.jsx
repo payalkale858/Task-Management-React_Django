@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
+const API_BASE = "https://task-management-react-django-4.onrender.com"
+
 export default function Gettodo() {
     const [todos, settodos] = useState([])
     const [reload, setreload] = useState(false)
@@ -10,13 +12,13 @@ export default function Gettodo() {
     const [updateId, setUpdateId] = useState(null)
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/todos/")
+        axios.get(`${API_BASE}/todos/`)
             .then((response) => settodos(response.data))
             .catch(() => alert("Error fetching todos"))
     }, [reload])
 
     const delete_todo = (id) => {
-        axios.delete(`http://127.0.0.1:8000/todos/${id}/`)
+        axios.delete(`${API_BASE}/todos/${id}/`)
             .then(() => {
                 alert("Todo deleted")
                 setreload(!reload)
@@ -33,7 +35,7 @@ export default function Gettodo() {
 
     const update = (e) => {
         e.preventDefault()
-        axios.put(`http://127.0.0.1:8000/todos/${updateId}/`, { title, description })
+        axios.put(`${API_BASE}/todos/${updateId}/`, { title, description })
             .then((res) => {
                 if (res.status === 200) {
                     alert("Todo updated successfully")
