@@ -8,8 +8,9 @@ export default function Todo() {
 
   let add_todo = (event) => {
     event.preventDefault()
+const API_BASE = "https://task-management-react-django-4.onrender.com";
 
-    axios.post("http://127.0.0.1:8000/todos/", {
+    axios.post(`${API_BASE}/todos/`, {
       title: title,
       description: description
     })

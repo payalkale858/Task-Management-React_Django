@@ -109,6 +109,10 @@ USE_TZ = True
 # --------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+# React build static files
+STATICFILES_DIRS = [
+    BASE_DIR / "templates" / "static",
+]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # --------------------------
